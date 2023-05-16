@@ -1,12 +1,26 @@
 interface Props {
   children: string;
+  buttonClass: string;
   color?: "primary" | "secondary" | "danger" | "success" | "warning";
+  // margin?: string;
+  // padding?: string;
   onClick: () => void;
 }
 
-const Button = ({ children, onClick, color }: Props) => {
+const Button = ({
+  buttonClass,
+  children,
+  onClick,
+  color,
+}: // margin,
+// padding,
+Props) => {
   return (
-    <button className={"btn rounded-pill btn-" + color} onClick={onClick}>
+    <button
+      style={{ marginTop: "25px" }}
+      className={buttonClass + " btn-" + color}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
